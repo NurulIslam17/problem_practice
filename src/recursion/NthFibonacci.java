@@ -1,4 +1,4 @@
-package recursion.FIbonacci;
+package recursion;
 
 public class NthFibonacci {
 
