@@ -5,7 +5,7 @@ public class PowerOfTwo {
 
 
     public static boolean powTwo(int n) {
-       if (n==1 || n==0)
+       if (n==1)
        {
            return true;
        }
