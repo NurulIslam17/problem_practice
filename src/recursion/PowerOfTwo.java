@@ -2,8 +2,6 @@ package recursion;
 
 public class PowerOfTwo {
 
-
-
     public static boolean powTwo(int n) {
        if (n==1)
        {
