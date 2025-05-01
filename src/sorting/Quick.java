@@ -8,12 +8,13 @@ public class Quick {
         int i = l;
         int j = h;
         while (i < j) {
-            while (a[i] < pivot) {
+            do {
                 i++;
-            }
+            } while (i < h && a[i] <= pivot);
+
             while (a[j] > pivot) {
                 j--;
-            }
+            };
             if (i < j) {
                 int temp = a[i];
                 a[i] = a[j];
@@ -26,15 +27,16 @@ public class Quick {
         return j;
     }
 
-
     public static void quickSort(int[] a, int l, int h) {
-        int pivotIndex = partition(a, l, h);
-        quickSort(a, l, pivotIndex - 1);
-        quickSort(a, pivotIndex + 1, h);
+        if (l < h) {
+            int pivotIndex = partition(a, l, h);
+            quickSort(a, l, pivotIndex);
+            quickSort(a, pivotIndex + 1, h);
+        }
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 6, 4, 7, 3, 1, 5};
+        int[] arr = {0, 8, 2, 6, 4, 7, 3, 1, 5};
         int n = arr.length;
         quickSort(arr, 0, n - 1);
 
