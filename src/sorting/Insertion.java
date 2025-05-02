@@ -6,7 +6,7 @@ public class Insertion {
             int minIndex = i;
             for (int j = i; j >= 0; j--) {
                 if (arr[minIndex] < arr[j]) {
-                    int temp = arr[minIndex];
+                    int temp = arr [minIndex];
                     arr[minIndex] = arr[j];
                     arr[j] = temp;
                     minIndex = j;
