@@ -14,6 +14,8 @@ public class ThreeSum {
             while (left < right) {
                 if (sum == 0) {
                     result.add(Arrays.asList(arr[i], arr[left], arr[right]));
+                    left++;
+                    right--;
                 } else if (sum < 0) {
                     left++;
                 } else {
