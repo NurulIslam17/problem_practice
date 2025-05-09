@@ -1,33 +1,34 @@
 package leetcode;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-
 public class ThreeSumClosest {
 
-    private static void calculateClosestSum(int[] arr, int target) {
-        HashSet<List<Integer>> result = new HashSet<>();
+    private static int calculateClosestSum(int[] arr, int target) {
+        int resultSum = arr[0] + arr[1] + arr[2];
+        int minDiff = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length - 2; i++) {
             int left = i + 1;
             int right = arr.length - 1;
             int sum = arr[i] + arr[left] + arr[right];
             if (sum == target) {
-                result.add(Arrays.asList(arr[i], arr[left], arr[right]));
-                left++;
-                right--;
+                return sum;
             } else if (sum > target) {
                 right--;
             } else {
                 left++;
             }
+            int targetToDiff = Math.abs(sum - target);
+            if (targetToDiff < minDiff) {
+                resultSum = sum;
+                minDiff = targetToDiff;
+            }
         }
-        System.out.println(result);
+        return resultSum;
     }
 
     public static void main(String[] args) {
-        int[] arr = {-4, -1, 0, 1, 2};
+        int[] arr = {-4, -1, 1, 2};
         int target = 1;
-        calculateClosestSum(arr, target);
+        System.out.println(calculateClosestSum(arr, target));
+        ;
     }
 }
