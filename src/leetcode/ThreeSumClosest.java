@@ -1,8 +1,12 @@
 package leetcode;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ThreeSumClosest {
 
     private static int calculateClosestSum(int[] arr, int target) {
+        Arrays.sort(arr);
         int resultSum = arr[0] + arr[1] + arr[2];
         int minDiff = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length - 2; i++) {
