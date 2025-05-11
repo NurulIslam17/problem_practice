@@ -12,25 +12,29 @@ public class ThreeSumClosest {
         for (int i = 0; i < arr.length - 2; i++) {
             int left = i + 1;
             int right = arr.length - 1;
-            int sum = arr[i] + arr[left] + arr[right];
-            if (sum == target) {
-                return sum;
-            } else if (sum > target) {
-                right--;
-            } else {
-                left++;
-            }
-            int targetToDiff = Math.abs(sum - target);
-            if (targetToDiff < minDiff) {
-                resultSum = sum;
-                minDiff = targetToDiff;
+
+            while(left<right)
+            {
+                int sum = arr[i] + arr[left] + arr[right];
+                if (sum == target) {
+                    return target;
+                } else if (sum > target) {
+                    right--;
+                } else {
+                    left++;
+                }
+                int targetToDiff = Math.abs(sum - target);
+                if (targetToDiff < minDiff) {
+                    resultSum = sum;
+                    minDiff = targetToDiff;
+                }
             }
         }
         return resultSum;
     }
 
     public static void main(String[] args) {
-        int[] arr = {-4, -1, 1, 2};
+        int[] arr = {10,20,30,40,50,60,70,80,90};
         int target = 1;
         System.out.println(calculateClosestSum(arr, target));
         ;
