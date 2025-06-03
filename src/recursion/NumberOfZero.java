@@ -10,7 +10,7 @@ public class NumberOfZero {
         return helper(num,0);
     }
 
-    public static int helper(int n, int c) {
+    public static int helper(int       n, int c) {
         if (n == 0) {
             return c;
         }
