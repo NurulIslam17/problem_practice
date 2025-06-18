@@ -1,21 +1,20 @@
 package Basic;
-import java.util.ArrayList;
+
+import java.util.HashSet;
 
 public class RemoveDuplicate {
-
-    public static ArrayList<Integer> solution(int[] numbers) {
-        ArrayList<Integer> res  =  new ArrayList<>();
-        for (int i = 0; i < numbers.length; i++) {
-            if (res.contains(numbers[i]))
-            {
-                continue;
-            }
-            res.add(numbers[i]);
-        }
-        return res;
-    }
     public static void main(String[] args) {
-        int [] numbers = {1,2,3,2,3,4,6,3};
-        System.out.println(solution(numbers));
+        int[] arr = {1, 2, 3, 4, 2, 3, 4, 8, 9, 7, 4, 3, 4, 6, 6, 2, 2, 3};
+        helper(arr);
+    }
+
+    public static void helper(int[] arr) {
+        HashSet<Integer> result = new HashSet<>();
+        for (int j : arr) {
+            result.add(j);
+        }
+        for (int i : result) {
+            System.out.print(i + " ");
+        }
     }
 }
