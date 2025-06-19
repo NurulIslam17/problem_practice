@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 public class AllTargetIndex {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 1, 3, 4, 4, 4, 2, 3};
+        int[] arr = {1, 2, 3, 4, 5, 1, 3, 4, 2, 3};
         int target = 4;
         indexList(arr, target, 0);
+        System.out.println(list);
     }
 
 
