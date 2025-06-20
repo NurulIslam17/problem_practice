@@ -6,20 +6,16 @@ public class AllTargetIndex {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 1, 3, 4, 2, 3};
         int target = 4;
-        indexList(arr, target, 0);
-        System.out.println(list);
+        System.out.println(indexList(arr, target, 0, new ArrayList<>()));
     }
 
-
-    static ArrayList<Integer> list = new ArrayList<>();
-
-    public static void indexList(int[] arr, int target, int index) {
+    public static ArrayList<Integer> indexList(int[] arr, int target, int index, ArrayList<Integer> list) {
         if (index == arr.length) {
-            return;
+            return list;
         }
         if (target == arr[index]) {
             list.add(index);
         }
-        indexList(arr, target, index + 1);
+        return indexList(arr, target, index + 1, list);
     }
 }
