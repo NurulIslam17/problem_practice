@@ -10,7 +10,7 @@ public class Pattern1 {
             return;
         }
         if (r > c) {
-            System.out.print("* ");
+            System.out.print("*  ");
             solve(r, c + 1);
 
         } else {
