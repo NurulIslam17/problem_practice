@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class Quick {
 
 
@@ -40,8 +42,7 @@ public class Quick {
         int n = arr.length;
         quickSort(arr, 0, n - 1);
 
-        for (int val : arr) {
-            System.out.print(" " + val);
-        }
+        System.out.println(Arrays.toString(arr));
+
     }
 }
