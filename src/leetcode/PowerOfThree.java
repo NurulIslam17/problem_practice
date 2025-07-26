@@ -8,11 +8,17 @@ public class PowerOfThree {
     }
 
     public static boolean isPowerOfThree(int number) {
-
-        if (number == 1) return true;
-        if (number > 1) {
+        if (number <=0) {
+            return false;
+        }
+        if (number == 1) {
+            return true;
+        }
+        if (number%3==0) {
             return isPowerOfThree(number / 3);
         }
         return false;
     }
+
+
 }
